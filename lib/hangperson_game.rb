@@ -10,8 +10,8 @@ class HangpersonGame
   end
 
   def guess(letter)
-    letter.gsub!(/[^a-zA-z]/i, '')
-    if letter.size == 0 or not letter 
+    letter.gsub!(/[^a-zA-z]/i, '') unless not letter
+    if not letter or letter.size == 0
       raise ArgumentError
     end
     letter.downcase!
