@@ -14,6 +14,7 @@ class HangpersonGame
     if letter.size == 0 or not letter 
       raise ArgumentError
     end
+    letter.downcase!
     if @guesses.include? letter or @wrong_guesses.include? letter
       return false
     end
